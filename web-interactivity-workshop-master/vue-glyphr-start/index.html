@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Glyphr</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,900;1,400;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+    <script src="https://unpkg.com/vue@next"></script>
+  </head>
+  <body>
+    <div class="app">
+      <header><h1>Glyphr</h1></header>
+      <div class="glyphs">
+        <div
+          class="glyph"
+          :class="{ active: glyph === currentGlyph }"
+          v-for="glyph in glyphs"
+          @click="currentGlyph = glyph"
+        >
+          {{glyph}}
+        </div>
+      </div>
+      <div class="preview">
+        <div class="large" :class="currentStyle">{{ currentGlyph }}</div>
+      </div>
+      <div class="styles">
+        <div class="style" :class="{ active: currentStyle === 'regular'}" @click="currentStyle='regular'">Regular</div>
+        <div class="style" :class="{ active: currentStyle === 'black'}" @click="currentStyle='black'">Black</div>
+        <div class="style" :class="{ active: currentStyle === 'italic'}" @click="currentStyle='italic'">Italic</div>
+      </div>
+    </div>
+    <script src="js/main.js"></script>
+  </body>
+</html>

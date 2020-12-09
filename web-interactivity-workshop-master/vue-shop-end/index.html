@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lead Type Shop</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,900;1,400;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+    <script src="https://unpkg.com/vue@next"></script>
+  </head>
+  <body>
+    <div class="app">
+      <header>
+        <h1>Lead Type</h1>
+      </header>
+      <div class="explain">
+        <p>
+          Order your name in lead type and use it to stamp, print or design your own letterheads. Because old-school is
+          the new school.
+        </p>
+      </div>
+      <form action="">
+        <div class="row">
+          <label for="name" class="label">Your Name</label>
+          <input name="name" type="text" maxlength="30" placeholder="Your name here" v-model="name" />
+          <span class="letters">{{ name.length }} letters</span>
+        </div>
+
+        <div class="row">
+          <h2 class="label">Styles</h2>
+          <div class="styles">
+            <label class="style"><input type="checkbox" v-model="styleLight" /><span class="light">Light</span><span class="checkmark"></span></span></label>
+            <label class="style"><input type="checkbox" v-model="styleRegular" /><span class="regular">Regular</span><span class="checkmark"></span></label>
+            <label class="style"><input type="checkbox" v-model="styleBlack" /><span class="black">Black</span><span class="checkmark"></span></label>
+          </div>
+        </div>
+
+        <div class="row">
+          <h2>Your Order</h2>
+          <div class="price-row">
+            <span class="description">{{ name.length }} letters × {{ styleCount }} style(s)</span><span class="price">€ {{ netPrice }}.00</span>
+          </div>
+          <div class="price-row"><span class="description">Shipping</span>
+            <span class="price" v-if="shipping > 0">€ {{ shipping }}.00</span>
+            <span class="price" v-else>Free!</span>
+          </div>
+          <div class="price-row small">Free above € 50</div>
+          <div class="price-row"><span class="description">Total</span><span class="price">€ {{ total }}.00</span></div>
+          <div class="row">
+            <button class="buy">Buy Now</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <script src="js/main.js"></script>
+  </body>
+</html>

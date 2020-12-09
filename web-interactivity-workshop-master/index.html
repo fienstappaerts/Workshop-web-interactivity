@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Interactivity Workshop</title>
+    <style>
+      body {
+        font: 18px sans-serif;
+        background: #f7f7f7;
+        color: #555;
+        margin: 3rem auto;
+        padding: 1rem;
+        max-width: 800px;
+      }
+      h1,
+      h2 {
+        font-weight: normal;
+      }
+      h1 {
+        font-size: 1.8rem;
+      }
+      p {
+        padding: 0 1rem;
+      }
+      h2 {
+        padding-top: 1rem;
+        font-size: 1.2rem;
+      }
+      img {
+        height: 300px;
+      }
+    </style>
+    <script src="https://unpkg.com/vue@next"></script>
+  </head>
+  <body>
+    <div class="app">
+      <h1>Web Interactivity Workshop</h1>
+      <h2>Projects</h2>
+      <p><a href="./vue-hello-end/index.html">Hello, Vue!</a></p>
+      <p><a href="./vue-glyphr-end/index.html">Glyphr</a></p>
+      <p><a href="./vue-shop-end/index.html">Shop</a></p>
+      <p><a href="./vue-font-edit-end/index.html">Font Editor</a></p>
+      <h2>Docs</h2>
+      <p><a href="https://v3.vuejs.org/guide/introduction.html">Vue Documentation</a></p>
+      <p><a href="https://www.vuemastery.com/courses/intro-to-vue-3/">Vue Mastery Tutorial</a></p>
+      <img :src="catImage" alt="" @mouseenter="flipCat()" @mouseleave="flipCat()" />
+    </div>
+  </body>
+</html>

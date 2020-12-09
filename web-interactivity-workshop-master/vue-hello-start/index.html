@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font: 18px sans-serif;
+        background: #f7f7f7;
+        color: #555;
+        margin: 3rem auto;
+        padding: 1rem;
+        max-width: 800px;
+      }
+      img {
+        height: 300px;
+      }
+    </style>
+    <script src="https://unpkg.com/vue@next"></script>
+  </head>
+  <body>
+    <div class="app">
+      <p>Hello, {{name}}!</p>
+      <img :src="catImage" alt="Cat" @click="flipCat" />
+    </div>
+    <script src="js/main.js"></script>
+  </body>
+</html>

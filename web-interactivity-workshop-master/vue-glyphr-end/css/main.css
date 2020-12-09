@@ -1,0 +1,128 @@
+:root {
+  --green-100: #eeffe7;
+  --green-200: #d3ffbe;
+  --green-300: #a9fa83;
+  --green-400: #7cf443;
+  --green-500: #59ef12;
+  --green-600: #55b727;
+  --green-700: #55a331;
+  --green-800: #4c8b2e;
+  --green-900: #3c5630;
+
+  --teal-100: #cffbf0;
+  --teal-200: #a3e5d5;
+  --teal-300: #86d5c2;
+  --teal-400: #58ae9a;
+  --teal-500: #498d7d;
+  --teal-600: #377566;
+  --teal-700: #2d6457;
+  --teal-800: #26594d;
+  --teal-900: #2d4b44;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+body {
+  background-color: var(--teal-900);
+  color: #fff;
+  font-family: Lato, sans-serif;
+}
+
+/**** APP ****/
+
+.app {
+  display: grid;
+  grid-template-rows: 75px 65px 1fr 50px;
+  height: 100vh;
+}
+
+/**** HEADER ****/
+
+header {
+  background: var(--teal-700);
+  color: white;
+  display: grid;
+  align-items: center;
+  border-bottom: 5px solid var(--teal-500);
+}
+
+header h1 {
+  font-size: 24px;
+  padding: 0 2rem;
+}
+
+/**** GLYPHS ****/
+
+.glyphs {
+  display: grid;
+  grid-template-columns: repeat(26, 65px);
+  overflow-x: auto;
+}
+
+.glyphs .glyph {
+  background: var(--green-300);
+  color: white;
+  display: grid;
+  place-items: center;
+  font-size: 24px;
+  font-weight: 900;
+  font-style: oblique;
+  cursor: pointer;
+}
+
+.glyphs .glyph:nth-child(even) {
+  background: var(--green-400);
+}
+
+.glyphs .glyph.active {
+  background-color: var(--teal-500);
+}
+
+/**** PREVIEW ****/
+
+.preview {
+  background: var(--teal-500);
+  display: grid;
+  place-items: center;
+}
+
+.preview .large {
+  font-size: 200px;
+}
+
+.preview .italic {
+  font-style: oblique;
+}
+
+.preview .black {
+  font-weight: 900;
+}
+
+/**** STYLES ****/
+
+.styles {
+  display: grid;
+  grid-template-columns: repeat(3, 115px);
+  grid-gap: 2px;
+  font-size: 24px;
+  font-weight: 900;
+  justify-content: center;
+}
+
+.styles .style {
+  background: var(--teal-700) linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0));
+  width: 115px;
+  height: 50px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+.styles .style.active {
+  background: var(--teal-500);
+}
